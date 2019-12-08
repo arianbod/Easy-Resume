@@ -276,12 +276,12 @@ function ScrollableTabsButtonAuto() {
 
       </AppBar>
    
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={1}>
         <Grid container spacing={4}>    
               {worksexperiences}          
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={0}>
           <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
            

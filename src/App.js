@@ -5,6 +5,7 @@ import {  Hidden,AppBar,Tabs,Tab,Container, Button, Box, Grid, Typography, Paper
 import './App.css';
 // import CenteredTabs from './Components/tabs.js';  
 import img from './20191110d_155427.jpg';
+import resume from './resume.pdf';
 import keyboard from './1440.png';
 const at = '{at}';
 const Skills = [
@@ -38,13 +39,13 @@ const SoftSkills = [{ skill: 'Problem-Solving', Level: '4' },
   { skill: 'Time Management', Level: '5' },
   { skill: 'Leadership', Level: '4' },
 ]
-const Education = [{ since: '2018', Title: 'Ghiaseddin Jamshid Kashani University', description: 'Ghazvin, Iran', }, { since: '2019', Title: `On the top 1% in the Master's Entrance Exam `, description: `On the top 1% of the entire participants in the Master's Entrance Exam (ranked 446 out of over 614000  participants)`, }, { since: 'current', Title: 'Khaje Nasir University',Place:'Tehran, Iran' ,description: '1256th University of the World,15th of Iran', }]
-const AboutMe = [`Experience in Agile methodology of Scrum and Waterfall model.`,`Expertise in using Rally to manage Scrum/Agile sprints and user stories.`,`Ability to exercise independent judgment, project management skills and proficiency in planning.`,`Capability to manage multiple projects and/or tasks and adept new technologies with minimal learning curve.`,`Excellent problem solving skills with strong technical background and good interpersonal skills.`,`Quick learner and excellent team player, ability to meet deadlines and work under pressure.`,`Willing to relocate: Anywhere`,]
+const Education = [{ since: '2018', Title: 'B.E. at Ghiaseddin Jamshid Kashani University', description: 'Ghazvin, Iran', }, { since: '2019', Title: `On the top 1% in the Master's Entrance Exam `, description: `On the top 1% of the entire participants in the Master's Entrance Exam (ranked 446 out of over 614000  participants)`, }, { since: 'Present', Title: 'MSc at Khaje Nasir Tousi University',Place:'Tehran, Iran' ,description: '1256th University of the World,15th of Iran', }]
+const AboutMe = [`Experience in Agile methodology of Scrum and Waterfall model.`,`Expertise in using Rally to manage Scrum/Agile sprints and user stories.`,`Ability to exercise independent judgment, project management skills and proficiency in planning.`,`Capability to manage multiple projects and/or tasks and adept new technologies with minimal learning curve.`,`Excellent problem solving skills with strong technical background and good interpersonal skills.`,`Quick learner and excellent team player, ability to meet deadlines and work under pressure.`,]
 const workingexperience = [{
   Since: '2019',
   Title: 'Rubika',
   Position: 'Full-Stack Developer',
-  Environment: `HTML5, CSS3, LESS, JavaScript, Reactjs, Restful API, Node.js, Mongo DB, AGILE, Material UI, REST API's, Webpack, Jasmine, NPM, GIT, JIRA.`
+  Environment: `HTML5, CSS3, LESS, JavaScript, Reactjs, Restful API, Node.js, Mongo DB, AGILE, Material UI, Rest API's, Webpack, Jasmine, NPM, GIT, JIRA.`
   , detail: [
     ' Created micro-services for decisions, mandates, meetings and documents using node.js, And deployed the docker containers.',
     ' Worked with NPM commands and using package.json for managing dependencies and dev - dependencies of NodeJS applications.',
@@ -76,8 +77,8 @@ const workingexperience = [{
   {
     Since: '2017',
     Title: 'Pardis Hooshmand Aseman',
-    Position: ' Front-End Developer',
-    Environment: `HTML5, CSS3, LESS, Material UI, JavaScript, Restful API, ES6, ReactJs,Node.js, Mongo DB, Agile, Bootstrap, REST API's, Webpack, Jasmine, NPM, GIT, JIRA, and Visual Studio Code.`
+    Position: 'Front-End Developer',
+    Environment: ` React, Redux, Visual studio code, IntelliJ, JEST, HTML5, LESS, react, Web pack, NPM, Yarn, ESLint, GIT, Rest APIs.`
     , detail: [
       ' Design and development of React Redux framework to create component - based scalable applications.',
       ' Created Search form for a variety of search parameters with different combinations for data.',
@@ -106,7 +107,8 @@ const workingexperience = [{
     Since: '2014',
     Title: 'Ladybird',
     Position: ' Front-End Developer',
-    Environment: `React, Redux, Visual studio code, IntelliJ, JEST, HTML5, LESS, react, Web pack, NPM, Yarn, ESLint, GIT, Rest APIs.`
+    Environment: `
+    HTML5, CSS3, LESS, Material UI, JavaScript, Restful API, ES6, ReactJs,Node.js, Mongo DB, Agile, Bootstrap, REST API's, Webpack, Jasmine, NPM, GIT, JIRA, and Visual Studio Code.`
     , detail: [
       ` Created front end user interface using ReactJs, HTML5, LESS to interact with microservices.Used MongoDB a NoSQL database for Data storage.Created API Gateway to communicate front end and microservices.`,
       ` Responsible for Style, look and feel of the web page with LESS that extends CSS with dynamic behavior such as variable, mixing, operations and functions.`,
@@ -203,11 +205,11 @@ const EducationsItem = Education.map((EducationItem) =>
 const SkillsItem = Skills.map((skillItem) =>
    
   // <Paper>
-    <Grid item xs={12}>{skillItem.skill}</Grid>
+    <Grid item xs={12} sm={6}>{skillItem.skill}</Grid>
   // </Paper>
 )
 const SoftSkillsItem = SoftSkills.map((softSkillItem) =>
-  <Grid item xs={6}>{softSkillItem.skill}</Grid>
+  <Grid item sm={6} xs={12}>{softSkillItem.skill}</Grid>
 );
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -267,7 +269,7 @@ function ScrollableTabsButtonAuto() {
           <Tab label="Skills" {...a11yProps(0)} />
           <Tab label="Working experience" {...a11yProps(1)} />
           <Tab label="Education" {...a11yProps(3)} />
-          <Tab label="About Me" {...a11yProps(2)} />
+          {/* <Tab label="About Me" {...a11yProps(2)} /> */}
          <Tab label="Contact Me" {...a11yProps(4)} />
           {/*
           <Tab label="Item Six" {...a11yProps(5)} />
@@ -282,7 +284,28 @@ function ScrollableTabsButtonAuto() {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={0}>
-          <Grid container spacing={2}>
+      
+          <Grid container row="column">
+            <Grid item xs={12}>
+              <List>
+                {AboutMe.map((aboutmeItem) =>
+                  <ListItem>
+                    <ListItemText>
+                      {aboutmeItem}
+                    </ListItemText>
+
+                  </ListItem>
+
+
+                )}
+
+              </List>
+
+</Grid>
+
+         
+          <Grid item xs={12}>
+            <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
            
                 <Typography variant="h4">
@@ -296,7 +319,9 @@ function ScrollableTabsButtonAuto() {
               
             </Grid>
             </Paper>
-          </Grid>
+              </Grid>
+
+           
           <Grid item item xs={12} md={6}>
             <Typography variant="h4">
               Soft skills
@@ -308,10 +333,12 @@ function ScrollableTabsButtonAuto() {
 
             </Grid>
             </Paper>
+              </Grid>
+            </Grid>
           </Grid>
           </Grid>
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      {/* <TabPanel value={value} index={3}>
         <Paper>
 
         <Grid item xs={12} style={{
@@ -336,20 +363,20 @@ function ScrollableTabsButtonAuto() {
 
         </Grid>
         </Paper>
-      </TabPanel>
+      </TabPanel> */}
     
-      <TabPanel value={value} index={4}>
+      <TabPanel value={value} index={3}>
         <Grid container>
           <Grid item xs={12} md={4}>
 
-        <a href="mailto:someone@example.com?Subject=Hello%20from%20web" target="_top" style={{textDecoration:'none'}}>
+        <a href="mailto:mohammadapi@live.com?Subject=Hello%20Mohammadamin" target="_top" style={{textDecoration:'none'}}>
               <Paper style={{ minHeight: '100px' }} textAlign="center">
                 <Grid container style={{ minHeight:'100px'}}
                   direction="row" justify="center"
                   alignItems="center">
                   <Grid item xs={12} align="center">
                 <Typography variant="h6" textAlign="center">
-           Mohammadapi {at} Live.com
+           Mohammadapi{at}Live.com
             </Typography>
 </Grid>
                   
@@ -394,9 +421,9 @@ function App() {
               <br />
             </Grid>
             <Grid item xs={8} md={3} align="center">
-              <Button color="primary" variant="contained" fullWidth style={{ margin: 'auto' }}>
+           <a href={resume} target="_blank">   <Button color="primary" variant="contained" fullWidth style={{ margin: 'auto' }}>
                 Download
-          </Button>
+          </Button></a>
             </Grid>
           </Grid>
 

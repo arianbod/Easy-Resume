@@ -7,7 +7,7 @@ import './App.css';
 import img from './20191110d_155427.jpg';
 import resume from './resume.pdf';
 import keyboard from './1440.png';
-const at = '{at}';
+const at = '@';
 const Skills = [
   { skill: 'Python', level: '4' },
   { skill: 'Javascript', level: '4' },
@@ -45,7 +45,7 @@ const workingexperience = [{
   Since: '2019',
   Title: 'Rubika',
   CompanyType:'LLC',
-  Description: `Rubika became Iran's most downloaded app in 2018 with an estimated 30 million downloads`,
+  Description: `Rubika became Iran's most downloaded app in 2019 with an estimated 30 million downloads`,
   // Rubika has been downloaded about 30 million times in the Iran',
   Position: 'Full-Stack Developer',
   Environment: `HTML5, CSS3, LESS, JavaScript, Reactjs, Restful API, Node.js, Mongo DB, AGILE, Material UI, Rest API's, Webpack, Jasmine, NPM, GIT, JIRA.`
@@ -66,7 +66,7 @@ const workingexperience = [{
     Title: 'Mobile Telecommunication Company of Iran (Hamrahe Aval)',
     CompanyType:'Corporation',
     Description:'The first and largest mobile operator in Iran',
-    Position: 'Full-Stack Javascript Developer',
+    Position: 'Full-Stack Developer',
     Environment: `Node.js, ReactJS, Redux, MongoDB, GIT, HTML5, CSS3, JSON, Bootstrap, WebPack, Babel.`
     , detail: [
       ` Working end to end, requirement gathering, designing, development, and implementation for the enhancements.`,
@@ -183,7 +183,16 @@ const worksexperiences = workingexperience.map((workItem) =>
              </Grid>
              )}
 
-             </Grid>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography >
+                <span style={{ fontWeight: '600' }}>
+
+              Environment : 
+                </span>
+              {workItem.Environment}
+              </Typography>
+            </Grid>
              </Grid>
       </Grid>
 
@@ -281,7 +290,7 @@ function ScrollableTabsButtonAuto() {
 
   return (
     <div >
-      <AppBar position="static" color="default">
+      <AppBar position="static"  style={{ borderRadius: '5px',backgroundColor:'white' }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -291,7 +300,6 @@ function ScrollableTabsButtonAuto() {
           scrollButtons="on"
           aria-label="scrollable auto tabs"
           centered
-          style={{borderRadius:'10px'}}
         >
           <Tab label="Skills" {...a11yProps(0)} />
           <Tab label="Work experience" {...a11yProps(1)} />
@@ -436,7 +444,7 @@ function ScrollableTabsButtonAuto() {
                   alignItems="center">
                   <Grid item xs={12} align="center">
                     <Typography variant="h6" textAlign="center">
-                No.15, Saeedi Sreet, Nelson Mandela bouldvard, Tehran, Iran
+                No.15, Saeedi Street, Nelson Mandela boulevard, Tehran, Iran
             </Typography>
                   </Grid>
 
@@ -479,11 +487,8 @@ function App() {
             <br />
                 Developer / Fullstack
           </Typography>
-              <br />
-              <br />
-              <br />
             </Grid>
-            <Grid item xs={8} md={3} align="center">
+            <Grid item xs={8} md={3} align="center" style={{marginTop:'4%'}}>
            <a href={resume} target="_blank">   <Button color="primary" variant="contained" fullWidth style={{ margin: 'auto' }}>
                 Download
           </Button></a>

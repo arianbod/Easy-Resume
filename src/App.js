@@ -5,7 +5,7 @@ import {  Hidden,AppBar,Tabs,Tab,Container, Button, Box, Grid, Typography, Paper
 import './App.css';
 // import CenteredTabs from './Components/tabs.js';  
 import img from './20191110d_155427.jpg';
-import resume from './resume.pdf';
+import resume from './MohammadAminAbtahi.pdf';
 import keyboard from './1440.png';
 const at = '@';
 const Skills = [

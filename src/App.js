@@ -7,7 +7,7 @@ import './App.css';
 import img from './20191110d_155427.jpg';
 import resume from './MohammadAminAbtahi.pdf';
 import keyboard from './1440.png';
-const at = '@';
+const at = '[at]';
 const Skills = [
   { skill: 'Python', level: '4' },
   { skill: 'Javascript', level: '4' },
